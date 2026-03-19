@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translation App</title>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-KO1+S3vN+eMFccsXtuv0rV0/7XycoP4yZx6wqV5ZlYTPb/8uvt1x6uYDQkJ1lXd2Vb/v3+7Z12b9F7uV3o2Xdg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Dark/Light Mode Toggle (fixed top-right) -->
+<button id="modeToggle" class="mode-btn">🌙 Dark Mode</button>
+
+<div class="container">
+
+    <h2>Multilingual Translator</h2>
+
+    <!-- Language Controls -->
+    <div class="controls">
+        <!-- Auto Detect -->
+        <select id="sourceLangAuto">
+            <option value="auto" selected>Detect Language</option>
+        </select>
+
+        <!-- Specific source languages -->
+        <select id="sourceLangSpecific">
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+            <option value="de">German</option>
+            <option value="ny">Chichewa</option>
+        </select>
+
+        <button id="swapBtn">⇄</button>
+
+        <select id="targetLang">
+            <option value="fr">French</option>
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="de">German</option>
+            <option value="ny">Chichewa</option>
+        </select>
+    </div>
+
+    <!-- Text Boxes Side-by-Side -->
+    <div class="text-boxes">
+
+        <!-- Input Box -->
+        <div class="box">
+            <label>Input</label>
+            <textarea id="inputText" maxlength="500" placeholder="Type your text..."></textarea>
+            <div class="counter" id="inputCounter">0 / 500</div>
+            <div class="box-actions">
+                <button id="listenInput" title="Listen">
+                    <i class="fa-solid fa-volume-high"></i> Listen
+                </button>
+                <button id="copyInput" title="Copy">
+                    <i class="fa-solid fa-copy"></i> Copy
+                </button>
+            </div>
+        </div>
+
+        <!-- Output Box -->
+        <div class="box">
+            <label>Output</label>
+            <div class="output-wrapper">
+                <textarea id="outputText" readonly placeholder="Translation appears here..."></textarea>
+                <div id="loadingSpinner" class="spinner" style="display:none;"></div>
+            </div>
+            <div class="box-actions">
+                <button id="listenOutput" title="Listen">
+                    <i class="fa-solid fa-volume-high"></i> Listen
+                </button>
+                <button id="copyOutput" title="Copy">
+                    <i class="fa-solid fa-copy"></i> Copy
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Translate Button -->
+    <button id="translateBtn">Translate</button>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
